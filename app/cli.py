@@ -64,6 +64,5 @@ def build_grids(source_path: str, output_path: str):
 
 @command()
 @argument("folder_path")
-@option("-o/--output-path", default=".", type=STRING)
-def handler(folder_path: str, output_path: str):
-    build_grids(source_path=folder_path, output_path=output_path)
+def handler(folder_path: str):
+    build_grids(source_path=folder_path, output_path=".")
