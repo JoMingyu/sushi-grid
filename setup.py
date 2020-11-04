@@ -1,10 +1,10 @@
 from setuptools import setup
 
 setup(
-    name="sushi-gallery-maker",
+    name="sushi-grid",
     description="CLI tool for make sushi samples grid automatically",
     version="0.0.1",
-    url="https://github.com/JoMingyu/sushi-gallery-maker",
+    url="https://github.com/JoMingyu/sushi-grid",
     license="MIT License",
     author="PlanB",
     author_email="mingyu.planb@gmail.com",
