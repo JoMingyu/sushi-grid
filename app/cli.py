@@ -3,7 +3,7 @@ from os import listdir
 from os.path import join
 
 from PIL import Image
-from click import command, argument, option
+from click import command, argument, option, STRING
 
 
 def chunk(it, size):
@@ -64,6 +64,6 @@ def build_grids(source_path: str, output_path: str):
 
 @command()
 @argument("folder_path")
-@option("-o/--output-path", default=".")
+@option("-o/--output-path", default=".", type=STRING)
 def handler(folder_path: str, output_path: str):
     build_grids(source_path=folder_path, output_path=output_path)
