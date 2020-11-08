@@ -3,7 +3,7 @@ from os import listdir
 from os.path import join
 
 from PIL import Image
-from click import command, argument, option, STRING
+from click import command, argument
 
 
 def chunk(it, size):
@@ -29,17 +29,21 @@ def square_and_resize_image(image: Image, resize_scale: int):
 
 
 def make_2by2_grid(images, grid_scale) -> Image:
+    margin_per_item = grid_scale // 80 // 2
+
     background = Image.new("RGBA", (grid_scale, grid_scale), (255, 255, 255, 255))
 
     offsets = [
         (0, 0),
-        (grid_scale // 2, 0),
-        (0, grid_scale // 2),
-        (grid_scale // 2, grid_scale // 2),
+        (grid_scale // 2 + margin_per_item, 0),
+        (0, grid_scale // 2 + margin_per_item),
+        (grid_scale // 2 + margin_per_item, grid_scale // 2 + margin_per_item),
     ]
 
     for index, _ in enumerate(images):
-        image = square_and_resize_image(Image.open(_), grid_scale // 2)
+        image = square_and_resize_image(
+            Image.open(_), grid_scale // 2 - margin_per_item
+        )
         background.paste(image, offsets[index])
 
     return background
