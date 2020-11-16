@@ -29,7 +29,7 @@ def square_and_resize_image(image: Image, resize_scale: int):
 
 
 def make_2by2_grid(images, grid_scale) -> Image:
-    margin_per_item = grid_scale // 80 // 2
+    margin_per_item = grid_scale // 80 // 4
 
     background = Image.new("RGBA", (grid_scale, grid_scale), (255, 255, 255, 255))
 

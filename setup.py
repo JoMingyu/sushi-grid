@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name="sushi-grid",
     description="CLI tool for make sushi samples grid automatically",
-    version="0.0.1",
+    version="0.0.2",
     url="https://github.com/JoMingyu/sushi-grid",
     license="MIT License",
     author="PlanB",
