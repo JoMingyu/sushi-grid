@@ -50,7 +50,7 @@ def make_2by2_grid(images, grid_scale) -> Image:
 
 
 def build_grids(source_path: str, output_path: str):
-    filenames = [join(source_path, f) for f in listdir(source_path)]
+    filenames = [join(source_path, f) for f in sorted(listdir(source_path))]
 
     chunks_of_grid_target_filenames = chunk(filenames, 4)
 
